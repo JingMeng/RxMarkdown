@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.chain;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Chain of responsibility pattern.
@@ -59,3 +59,4 @@ public interface ISpecialChain {
     boolean setNextHandleSyntax(@NonNull ISpecialChain nextHandleSyntax);
 
 }
+

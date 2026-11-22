@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.live;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.yydcdut.markdown.MarkdownConfiguration;
 
@@ -64,3 +64,4 @@ public interface IEditLive {
      */
     void onSelectionChanged(int selStart, int selEnd);
 }
+

@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.edit;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -63,7 +63,7 @@ class CodeBlockSyntax extends EditSyntaxAdapter {
             for (int j = 0; j < middleList.size(); j++) {
                 int position = middleList.get(j);
                 MDCodeBlockSpan mdCodeBlockSpan = new MDCodeBlockSpan(mColor);
-                if (position == current) {//处理只有换行符
+                if (position == current) {
                     editTokenList.add(new EditToken(mdCodeBlockSpan, position - 1, position + 1, j == 0 ? Spannable.SPAN_EXCLUSIVE_INCLUSIVE : Spannable.SPAN_INCLUSIVE_INCLUSIVE));
                 } else {
                     editTokenList.add(new EditToken(mdCodeBlockSpan, current, position, j == 0 ? Spannable.SPAN_EXCLUSIVE_INCLUSIVE : Spannable.SPAN_INCLUSIVE_INCLUSIVE));
@@ -85,3 +85,4 @@ class CodeBlockSyntax extends EditSyntaxAdapter {
         return editTokenList;
     }
 }
+

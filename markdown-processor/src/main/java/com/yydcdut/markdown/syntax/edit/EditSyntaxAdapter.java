@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.edit;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.yydcdut.markdown.MarkdownConfiguration;
 import com.yydcdut.markdown.syntax.Syntax;
@@ -42,3 +42,4 @@ abstract class EditSyntaxAdapter implements Syntax {
         return charSequence;
     }
 }
+

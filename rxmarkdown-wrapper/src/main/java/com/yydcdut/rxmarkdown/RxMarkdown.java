@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2016 yydcdut (yuyidong2015@gmail.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,7 @@
 package com.yydcdut.rxmarkdown;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.yydcdut.markdown.MarkdownConfiguration;
 import com.yydcdut.markdown.MarkdownEditText;
@@ -161,3 +161,4 @@ public class RxMarkdown {
     }
 
 }
+

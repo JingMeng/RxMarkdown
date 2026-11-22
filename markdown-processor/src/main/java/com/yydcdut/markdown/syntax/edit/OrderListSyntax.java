@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.edit;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.TextUtils;
@@ -52,7 +52,7 @@ class OrderListSyntax extends EditSyntaxAdapter {
         Pattern p = Pattern.compile(PATTERN, Pattern.MULTILINE);
         StringBuilder content = new StringBuilder(editable);
         Matcher m = p.matcher(content);
-        List<String> matchList = new ArrayList<>();//找到的
+        List<String> matchList = new ArrayList<>();
         while (m.find()) {
             matchList.add(m.group());
         }
@@ -77,7 +77,7 @@ class OrderListSyntax extends EditSyntaxAdapter {
                 break;
             }
             String sub = text.substring(nested * SyntaxKey.KEY_LIST_HEADER.length(), (nested + 1) * SyntaxKey.KEY_LIST_HEADER.length());
-            if (SyntaxKey.KEY_LIST_HEADER.equals(sub)) {//还是" "
+            if (SyntaxKey.KEY_LIST_HEADER.equals(sub)) {//杩樻槸" "
                 nested++;
             } else {
                 return nested;
@@ -136,3 +136,4 @@ class OrderListSyntax extends EditSyntaxAdapter {
         return findTrueIndex(match, content);
     }
 }
+

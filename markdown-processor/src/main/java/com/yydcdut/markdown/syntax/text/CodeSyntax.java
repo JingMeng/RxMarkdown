@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.TypefaceSpan;
@@ -122,7 +122,7 @@ class CodeSyntax extends TextSyntaxAdapter {
             return -1;
         } else {
             if (SyntaxUtils.existHyperLinkSyntax(ssb, tmp.length() + position, SyntaxKey.KEY_CODE.length()) ||
-                    SyntaxUtils.existImageSyntax(ssb, tmp.length() + position, SyntaxKey.KEY_CODE.length())) {//key是否在HyperLink或者CustomImage中
+                    SyntaxUtils.existImageSyntax(ssb, tmp.length() + position, SyntaxKey.KEY_CODE.length())) {
                 StringBuilder sb = new StringBuilder(tmpTmpTotal.substring(0, position))
                         .append("$").append(tmpTmpTotal.substring(position + SyntaxKey.KEY_CODE.length(), tmpTmpTotal.length()));
                 return findPosition(sb.toString(), ssb, tmp);
@@ -133,3 +133,4 @@ class CodeSyntax extends TextSyntaxAdapter {
     }
 
 }
+

@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 
 import com.yydcdut.markdown.live.EditToken;
@@ -58,3 +58,4 @@ public interface Syntax {
     @NonNull
     List<EditToken> format(@NonNull Editable editable);
 }
+

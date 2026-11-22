@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.RelativeSizeSpan;
@@ -98,7 +98,7 @@ class BlockQuotesSyntax extends TextSyntaxAdapter {
      * @param text the content
      * @return nested number of content
      */
-    private static int calculateNested(@NonNull String text) {//有一个 "> " 就算嵌套一层
+    private static int calculateNested(@NonNull String text) {
         int nested = 0;
         int i = 0;
         while (i < text.length()) {
@@ -120,3 +120,4 @@ class BlockQuotesSyntax extends TextSyntaxAdapter {
     void decode(@NonNull SpannableStringBuilder ssb) {
     }
 }
+

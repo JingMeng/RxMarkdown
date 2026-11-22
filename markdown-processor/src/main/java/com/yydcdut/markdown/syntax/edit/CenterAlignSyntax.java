@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.edit;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.Layout;
 import android.text.style.AlignmentSpan;
@@ -52,3 +52,4 @@ class CenterAlignSyntax extends EditSyntaxAdapter implements SyntaxUtils.OnWhatS
         return new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER);
     }
 }
+

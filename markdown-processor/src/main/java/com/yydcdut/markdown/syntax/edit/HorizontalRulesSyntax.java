@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.edit;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 
 import com.yydcdut.markdown.MarkdownConfiguration;
@@ -66,3 +66,4 @@ class HorizontalRulesSyntax extends EditSyntaxAdapter implements SyntaxUtils.OnW
         return new MDHorizontalRulesSpan(mColor, mHeight);
     }
 }
+

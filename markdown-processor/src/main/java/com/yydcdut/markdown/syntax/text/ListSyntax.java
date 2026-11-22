@@ -1,6 +1,6 @@
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -110,7 +110,7 @@ public class ListSyntax implements Syntax {
             int dotPosition = 1;
             final int length = text.length();
             for (int i = 1; i < length; i++) {
-                if (Character.isDigit(text.charAt(i))) {//一直都是数字
+                if (Character.isDigit(text.charAt(i))) {
                     continue;
                 } else {
                     dotPosition = i;
@@ -145,7 +145,7 @@ public class ListSyntax implements Syntax {
             return currentLinePosition;
         }
         int number = calculateOrderNumber(line);
-        //判断上文
+        //鍒ゆ柇涓婃枃
         if (lineIndex - 1 < 0 || lineIndex - 1 >= list.size()) {
             if (nested == 0) {
                 list.add(new ListBean(currentLinePosition, true, line, 0, 1, number));
@@ -174,7 +174,7 @@ public class ListSyntax implements Syntax {
                 }
                 //check
                 ListBean bean = list.get(lineIndex);
-                //如果为null说明上面某一部肯定有问题
+                //濡傛灉涓簄ull璇存槑涓婇潰鏌愪竴閮ㄨ偗瀹氭湁闂
                 if (bean == null) {
                     list.add(new ListBean(currentLinePosition, false, line, -1, -1, -1));
                 }
@@ -271,7 +271,7 @@ public class ListSyntax implements Syntax {
         }
         int nested = calculateNested(line);
         if (nested > 0) {
-            //判断上文
+            //鍒ゆ柇涓婃枃
             if (lineIndex - 1 < 0 || lineIndex - 1 >= list.size()) {
                 currentLinePosition += (line + "\n").length();
                 return currentLinePosition;
@@ -349,3 +349,4 @@ public class ListSyntax implements Syntax {
         }
     }
 }
+

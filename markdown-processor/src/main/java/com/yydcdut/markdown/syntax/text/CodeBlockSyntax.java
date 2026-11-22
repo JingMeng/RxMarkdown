@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -49,7 +49,7 @@ class CodeBlockSyntax implements Syntax {
     private int mBackgroundColor;
     private int mTextColor;
     private int mIndentedSize;
-    private PrettifyHighLighter mPrettifyHighLighter;//todo 耗时
+    private PrettifyHighLighter mPrettifyHighLighter;//todo 鑰楁椂
 
     public CodeBlockSyntax(@NonNull MarkdownConfiguration markdownConfiguration) {
         mBackgroundColor = markdownConfiguration.getTheme().getBackgroundColor();
@@ -85,9 +85,9 @@ class CodeBlockSyntax implements Syntax {
                 language = ssb.subSequence(TextHelper.safePosition(start, ssb), TextHelper.safePosition(middleList.get(0), ssb)).toString().replace(SyntaxKey.KEY_CODE_BLOCK, "").replace("\n", "");
             }
             int current = middleList.get(0) + 1;
-            for (int j = 1; j < middleList.size(); j++) {//放弃0，因为0是```java这样的
+            for (int j = 1; j < middleList.size(); j++) {
                 int position = middleList.get(j);
-                if (position == current) {//处理只有换行符
+                if (position == current) {
                     ssb.replace(position - 1, position, " ");
                 }
                 ssb.setSpan(new MDCodeBlockSpan(mBackgroundColor,
@@ -101,7 +101,7 @@ class CodeBlockSyntax implements Syntax {
                 mPrettifyHighLighter.highLight(language, ssb, start, end);
             } else {
                 current = middleList.get(0) + 1;
-                for (int j = 1; j < middleList.size(); j++) {//放弃0，因为0是```java这样的
+                for (int j = 1; j < middleList.size(); j++) {
                     int position = middleList.get(j);
                     ssb.setSpan(new ForegroundColorSpan(mTextColor), current, position, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                     current = position + 1;
@@ -119,3 +119,4 @@ class CodeBlockSyntax implements Syntax {
         return new ArrayList<>();
     }
 }
+

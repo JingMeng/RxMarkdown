@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.SpannableStringBuilder;
 
 import com.yydcdut.markdown.MarkdownConfiguration;
@@ -53,3 +53,4 @@ class NormalSyntax extends TextSyntaxAdapter {
     void decode(@NonNull SpannableStringBuilder ssb) {
     }
 }
+

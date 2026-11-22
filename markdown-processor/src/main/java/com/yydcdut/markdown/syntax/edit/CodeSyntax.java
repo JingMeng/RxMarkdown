@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.edit;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.style.BackgroundColorSpan;
 
@@ -54,3 +54,4 @@ class CodeSyntax extends EditSyntaxAdapter implements SyntaxUtils.OnWhatSpanCall
         return new BackgroundColorSpan(mColor);
     }
 }
+

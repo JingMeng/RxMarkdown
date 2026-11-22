@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -115,7 +115,7 @@ class UnOrderListSyntax implements Syntax {
             }
             int nested = calculateNested(lines[i]);
             if (nested > 0) {
-                //判断上文
+                //鍒ゆ柇涓婃枃
                 if (i - 1 < 0 || i - 1 >= list.size()) {
                     currentLineIndex += (lines[i] + "\n").length();
                     continue;
@@ -148,7 +148,7 @@ class UnOrderListSyntax implements Syntax {
                 break;
             }
             String sub = text.substring(nested * SyntaxKey.KEY_LIST_HEADER.length(), (nested + 1) * SyntaxKey.KEY_LIST_HEADER.length());
-            if (SyntaxKey.KEY_LIST_HEADER.equals(sub)) {//还是"  "
+            if (SyntaxKey.KEY_LIST_HEADER.equals(sub)) {//杩樻槸"  "
                 nested++;
             } else if (SyntaxKey.KEY_UNORDER_LIST_CHAR_ASTERISK.equals(sub)) {
                 return MDUnOrderListSpan.TYPE_KEY_0;
@@ -169,14 +169,14 @@ class UnOrderListSyntax implements Syntax {
      * @param text the content
      * @return nested number of content
      */
-    private int calculateNested(@NonNull String text) {//有 "  " 才算嵌套的开始
+    private int calculateNested(@NonNull String text) {
         int nested = 0;
         while (true) {
             if ((nested + 1) * SyntaxKey.KEY_LIST_HEADER.length() > text.length()) {
                 break;
             }
             String sub = text.substring(nested * SyntaxKey.KEY_LIST_HEADER.length(), (nested + 1) * SyntaxKey.KEY_LIST_HEADER.length());
-            if (SyntaxKey.KEY_LIST_HEADER.equals(sub)) {//还是"  "
+            if (SyntaxKey.KEY_LIST_HEADER.equals(sub)) {//杩樻槸"  "
                 nested++;
             } else if (SyntaxKey.KEY_UNORDER_LIST_CHAR_ASTERISK.equals(sub) ||
                     SyntaxKey.KEY_UNORDER_LIST_CHAR_PLUS.equals(sub) ||
@@ -227,3 +227,4 @@ class UnOrderListSyntax implements Syntax {
         return new ArrayList<>();
     }
 }
+

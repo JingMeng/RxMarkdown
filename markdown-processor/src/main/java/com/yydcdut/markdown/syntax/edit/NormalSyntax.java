@@ -15,8 +15,8 @@
  */
 package com.yydcdut.markdown.syntax.edit;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.Editable;
 
 import com.yydcdut.markdown.MarkdownConfiguration;
@@ -53,3 +53,4 @@ class NormalSyntax implements Syntax {
         return new ArrayList<>();
     }
 }
+

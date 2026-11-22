@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.edit;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 
 import com.yydcdut.markdown.MarkdownConfiguration;
@@ -52,7 +52,7 @@ class BlockQuotesSyntax extends EditSyntaxAdapter {
         List<EditToken> editTokenList = new ArrayList<>();
         StringBuilder content = new StringBuilder(editable);
         Matcher m = Pattern.compile(PATTERN, Pattern.MULTILINE).matcher(content);
-        List<String> matchList = new ArrayList<>();//找到的
+        List<String> matchList = new ArrayList<>();
         while (m.find()) {
             matchList.add(m.group());
         }
@@ -90,3 +90,4 @@ class BlockQuotesSyntax extends EditSyntaxAdapter {
         return nested;
     }
 }
+

@@ -16,7 +16,7 @@
 package com.yydcdut.markdown.syntax.edit;
 
 import android.annotation.SuppressLint;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.Spannable;
 
@@ -56,9 +56,9 @@ class UnOrderListSyntax extends EditSyntaxAdapter {
     @SuppressLint("WrongConstant")
     public List<EditToken> format(@NonNull Editable editable) {
         List<EditToken> editTokenList = new ArrayList<>();
-        List<String> matchList0 = new ArrayList<>();//找到的
-        List<String> matchList1 = new ArrayList<>();//找到的
-        List<String> matchList2 = new ArrayList<>();//找到的
+        List<String> matchList0 = new ArrayList<>();
+        List<String> matchList1 = new ArrayList<>();
+        List<String> matchList2 = new ArrayList<>();
         StringBuilder content = new StringBuilder(editable);
         replaceTodo(content);
         //+ sss
@@ -105,7 +105,7 @@ class UnOrderListSyntax extends EditSyntaxAdapter {
                 break;
             }
             String sub = text.substring(nested * SyntaxKey.KEY_LIST_HEADER.length(), (nested + 1) * SyntaxKey.KEY_LIST_HEADER.length());
-            if (SyntaxKey.KEY_LIST_HEADER.equals(sub)) {//还是" "
+            if (SyntaxKey.KEY_LIST_HEADER.equals(sub)) {//杩樻槸" "
                 nested++;
             } else {
                 return nested;
@@ -159,3 +159,4 @@ class UnOrderListSyntax extends EditSyntaxAdapter {
         }
     }
 }
+

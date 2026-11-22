@@ -1,7 +1,7 @@
-package com.yydcdut.markdowndemo.controller;
+﻿package com.yydcdut.markdowndemo.controller;
 
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -37,7 +37,7 @@ public class LinkController {
     private void initDialog() {
         mAlertDialog = new AlertDialog.Builder(mRxMDEditText.getContext())
                 .setView(mLinkDialogView)
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                .setPositiveButton("纭畾", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -46,7 +46,7 @@ public class LinkController {
                         doRealLink(description, link);
                     }
                 })
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                .setNegativeButton("鍙栨秷", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -67,3 +67,4 @@ public class LinkController {
         }
     }
 }
+

@@ -1,6 +1,6 @@
-package com.yydcdut.markdowndemo.controller;
+﻿package com.yydcdut.markdowndemo.controller;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.style.AlignmentSpan;
 import android.widget.EditText;
 
@@ -95,3 +95,4 @@ public class Utils {
         return TextHelper.safePosition(position, s);
     }
 }
+

@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -64,3 +64,4 @@ class CenterAlignSyntax extends TextSyntaxAdapter {
         replace(ssb, CharacterProtector.getKeyEncode1(), SyntaxKey.KEY_CENTER_ALIGN_BACKSLASH_RIGHT);
     }
 }
+

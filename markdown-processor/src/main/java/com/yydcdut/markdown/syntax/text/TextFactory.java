@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 
@@ -241,3 +241,4 @@ public class TextFactory implements SyntaxFactory {
         return charSequence;
     }
 }
+

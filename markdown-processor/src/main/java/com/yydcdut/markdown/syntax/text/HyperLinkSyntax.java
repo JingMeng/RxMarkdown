@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -102,7 +102,7 @@ class HyperLinkSyntax extends TextSyntaxAdapter {
         int findPosition = 0;
         for (int i = 0; i < length; i++) {
             if (TextHelper.getChar(array, i) != 0 && TextHelper.getChar(array, i) == TextHelper.getChar(findArray, findPosition)) {
-                if (findPosition == 1) {//]后面必须得是(
+                if (findPosition == 1) {//]鍚庨潰蹇呴』寰楁槸(
                     if (TextHelper.getChar(array, ++i) == 0 || TextHelper.getChar(findArray, ++findPosition) == 0) {
                         return false;
                     }
@@ -140,10 +140,10 @@ class HyperLinkSyntax extends TextSyntaxAdapter {
                 break;
             }
             if (position4Key0 < position4Key1 && position4Key1 < position4Key2) {
-                //处理aa[bb[b](cccc)dddd
+                //澶勭悊aa[bb[b](cccc)dddd
                 int tmpCenter = tmpTotal.indexOf(SyntaxKey.KEY_HYPER_LINK_MIDDLE);
                 String tmpLeft = tmpTotal.substring(0, tmpCenter);
-                //正常流程
+                //姝ｅ父娴佺▼
                 int positionHeader = tmpLeft.lastIndexOf(SyntaxKey.KEY_HYPER_LINK_LEFT);
                 tmp.append(tmpTotal.substring(0, positionHeader));
                 int index = tmp.length();
@@ -161,11 +161,11 @@ class HyperLinkSyntax extends TextSyntaxAdapter {
                 //111[22)22](33333)
                 tmpTotal = replaceFirstOne(tmpTotal, SyntaxKey.KEY_HYPER_LINK_RIGHT, SyntaxKey.PLACE_HOLDER);
             } else if (position4Key1 < position4Key0 && position4Key1 < position4Key2) {
-                //](在最前面的情况 111](2222[333)4444  1111](2222)3333[4444
+                //](鍦ㄦ渶鍓嶉潰鐨勬儏鍐?111](2222[333)4444  1111](2222)3333[4444
                 tmp.append(tmpTotal.substring(0, position4Key1 + SyntaxKey.KEY_HYPER_LINK_MIDDLE.length()));
                 tmpTotal = tmpTotal.substring(position4Key1 + SyntaxKey.KEY_HYPER_LINK_MIDDLE.length(), tmpTotal.length());
             } else if (position4Key2 < position4Key0 && position4Key2 < position4Key1) {
-                //)在最前面的情况 111)2222](333[4444  1111)2222[3333](4444
+                //)鍦ㄦ渶鍓嶉潰鐨勬儏鍐?111)2222](333[4444  1111)2222[3333](4444
                 tmp.append(tmpTotal.substring(0, position4Key2 + SyntaxKey.KEY_HYPER_LINK_RIGHT.length()));
                 tmpTotal = tmpTotal.substring(position4Key2 + SyntaxKey.KEY_HYPER_LINK_RIGHT.length(), tmpTotal.length());
             }
@@ -243,3 +243,4 @@ class HyperLinkSyntax extends TextSyntaxAdapter {
         return result.toString();
     }
 }
+

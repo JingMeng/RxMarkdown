@@ -16,7 +16,7 @@
 package com.yydcdut.markdown.utils;
 
 import android.graphics.Bitmap;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
@@ -101,7 +101,7 @@ public class SyntaxUtils {
         if (position == -1) {
             return -1;
         } else {
-            if (existCodeSyntax(ssb, tmp.length() + position, key.length())) {//key是否在code中
+            if (existCodeSyntax(ssb, tmp.length() + position, key.length())) {
                 StringBuilder sb = new StringBuilder(tmpTmpTotal.substring(0, position))
                         .append("$$").append(tmpTmpTotal.substring(position + key.length(), tmpTmpTotal.length()));
                 return findPosition(key, sb.toString(), ssb, tmp);
@@ -202,7 +202,7 @@ public class SyntaxUtils {
     public static List<EditToken> parse(@NonNull StringBuilder content, @NonNull String pattern, OnWhatSpanCallback callback) {
         List<EditToken> editTokenList = new ArrayList<>();
         Matcher m = Pattern.compile(pattern, Pattern.MULTILINE).matcher(content);
-        List<String> matchList = new ArrayList<>();//找到的
+        List<String> matchList = new ArrayList<>();
         while (m.find()) {
             matchList.add(m.group());
         }
@@ -347,3 +347,4 @@ public class SyntaxUtils {
     }
 
 }
+

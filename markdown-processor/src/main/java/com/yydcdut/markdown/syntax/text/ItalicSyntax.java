@@ -16,7 +16,7 @@
 package com.yydcdut.markdown.syntax.text;
 
 import android.graphics.Typeface;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.SpannableStringBuilder;
 import android.text.style.StyleSpan;
 
@@ -98,3 +98,4 @@ class ItalicSyntax extends TextSyntaxAdapter {
         }
     };
 }
+

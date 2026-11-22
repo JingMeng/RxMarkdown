@@ -15,7 +15,7 @@
  */
 package com.yydcdut.markdown.syntax.text;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -82,11 +82,11 @@ class FootnoteSyntax extends TextSyntaxAdapter {
         }
         char[] array = text.toCharArray();
         final int length = array.length;
-        char[] findArray = new char[]{'[', '^', ']'};// TODO: 2018/4/29 写到key里面
+        char[] findArray = new char[]{'[', '^', ']'};// TODO: 2018/4/29 鍐欏埌key閲岄潰
         int findPosition = 0;
         for (int i = 0; i < length; i++) {
             if (TextHelper.getChar(array, i) != 0 && TextHelper.getChar(array, i) == TextHelper.getChar(findArray, findPosition)) {
-                if (findPosition == 0) {//[后面必须得是^
+                if (findPosition == 0) {//[鍚庨潰蹇呴』寰楁槸^
                     if (TextHelper.getChar(array, ++i) == 0 || TextHelper.getChar(findArray, ++findPosition) == 0) {
                         return false;
                     }
@@ -156,7 +156,7 @@ class FootnoteSyntax extends TextSyntaxAdapter {
         if (position == -1) {
             return -1;
         } else {
-            if (SyntaxUtils.existCodeSyntax(ssb, tmp.length() + position, SyntaxKey.KEY_FOOTNOTE_LEFT.length())) {//key是否在inlineCode中
+            if (SyntaxUtils.existCodeSyntax(ssb, tmp.length() + position, SyntaxKey.KEY_FOOTNOTE_LEFT.length())) {
                 StringBuilder sb = new StringBuilder(tmpTmpTotal.substring(0, position))
                         .append("$$").append(tmpTmpTotal.substring(position + SyntaxKey.KEY_FOOTNOTE_LEFT.length(), tmpTmpTotal.length()));
                 return findBeginPosition(sb.toString(), ssb, tmp);
@@ -181,7 +181,7 @@ class FootnoteSyntax extends TextSyntaxAdapter {
         if (position == -1) {
             return -1;
         } else {
-            if (SyntaxUtils.existCodeSyntax(ssb, tmp.length() + position, SyntaxKey.KEY_FOOTNOTE_RIGHT.length())) {//key是否在inlineCode中
+            if (SyntaxUtils.existCodeSyntax(ssb, tmp.length() + position, SyntaxKey.KEY_FOOTNOTE_RIGHT.length())) {
                 StringBuilder sb = new StringBuilder(tmpTmpTotal.substring(0, position))
                         .append("$").append(tmpTmpTotal.substring(position + SyntaxKey.KEY_FOOTNOTE_RIGHT.length(), tmpTmpTotal.length()));
                 return findBeginPosition(sb.toString(), ssb, tmp);
@@ -191,3 +191,4 @@ class FootnoteSyntax extends TextSyntaxAdapter {
         }
     }
 }
+

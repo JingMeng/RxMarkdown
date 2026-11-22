@@ -16,8 +16,8 @@
 package com.yydcdut.markdown.syntax.edit;
 
 import android.graphics.Typeface;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.text.Editable;
 import android.text.style.StyleSpan;
 
@@ -58,3 +58,4 @@ class ItalicSyntax extends EditSyntaxAdapter implements SyntaxUtils.OnWhatSpanCa
         return new StyleSpan(Typeface.ITALIC);
     }
 }
+
